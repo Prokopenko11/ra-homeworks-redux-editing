@@ -4,6 +4,7 @@ import { removeService, editService  } from '../redux/actions/actionCreators';
 export default function ServiceList() {
   const items = useSelector(state => state.serviceList);
   const dispatch = useDispatch();
+  const filter = useSelector(state => state.filter);
 
   const handleRemove = id => {
     dispatch(removeService(id));
@@ -13,9 +14,13 @@ export default function ServiceList() {
     dispatch(editService(id, name, price));
   };
 
+  const filteredItems = items.filter(o =>
+    o.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <ul>
-      {items.map(o => (
+      {filteredItems.map(o => (
         <li className="item" key={o.id}>
           {o.name} {o.price}
           <div className="buttons">

@@ -4,3 +4,4 @@ export const CHANGE_SERVICE_FIELD = 'CHANGE_SERVICE_FIELD';
 export const EDIT_SERVICE = 'EDIT_SERVICE';
 export const UPDATE_SERVICE = 'UPDATE_SERVICE';
 export const CANCEL_EDIT = 'CANCEL_EDIT';
+export const SET_FILTER = 'SET_FILTER';

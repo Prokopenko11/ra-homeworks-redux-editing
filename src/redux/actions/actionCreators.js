@@ -1,4 +1,12 @@
-import { ADD_SERVICE, REMOVE_SERVICE, CHANGE_SERVICE_FIELD, EDIT_SERVICE, UPDATE_SERVICE, CANCEL_EDIT } from './actionTypes';
+import { 
+  ADD_SERVICE, 
+  REMOVE_SERVICE, 
+  CHANGE_SERVICE_FIELD, 
+  EDIT_SERVICE, 
+  UPDATE_SERVICE, 
+  CANCEL_EDIT,
+  SET_FILTER
+} from './actionTypes';
 
 export function addService(name, price) {
   return {
@@ -38,5 +46,12 @@ export function updateService(id, name, price) {
 export function cancelEdit() {
   return { 
     type: CANCEL_EDIT 
+  };
+}
+
+export function setFilter(value) {
+  return {
+    type: SET_FILTER,
+    payload: value,
   };
 }
